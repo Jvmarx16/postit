@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1 class="title-page">Mensagens</h1>
+    <div class="message-board">
+            {% for message in messages %}
+            <a href="messages/{{message.id}}">• {{message.title}}</a>
+            {% endfor %}
+    </div> 
+{% endblock %}

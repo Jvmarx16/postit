@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+   <main>
+      <article>
+         <img src="/static/post-it-logo.png" alt="scrap=paper">
+      </article>
+   <div class="msg-homepage">
+      <h1>Já Conhece o Post it?</h1>
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+   </div>
+   </main>
+   {% if session.logged_in == NULL %}
+      <div class="btn-div">
+         <a href="/login" id="link-login">Já possui uma conta?</a>
+         <a href="/register" id="link-login">Faça parte</a>
+      </div> 
+   {% endif %}
+{% endblock %}

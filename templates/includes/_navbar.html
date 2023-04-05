@@ -1,0 +1,20 @@
+<nav>
+  <a class="logo" href="/">Post it!</a>
+  <div class="mobile-menu">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+  <ul class="nav-list">
+    {% if session.logged_in == NULL %}
+      <li class="navlist"><a href="/register">Registre-se</a></li>
+      <li class="navlist"><a href="/about">Sobre</a></li>
+      <li class="navlist"><a href="/login">Login</a></li>
+    {% else %}
+      <li class="navlist"><a href="/about">Sobre</a></li>
+      <li class="navlist"><a href="/messages">Mensagens</a></li>
+      <li class="navlist"><a href="/dashboard">Painel</a></li>
+      <li class="navlist"><a href="/logout">Sair</a></li>
+    {% endif %}
+  </ul>
+</nav> 

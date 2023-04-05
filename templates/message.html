@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="title-page">
+        <h1>{{message.title}}</h1>
+        <small>Criado por {{message.author}} em {{message.create_date}}</small>
+    </div>
+    <div id="message-body">
+        {{ message.body | safe }}
+    </div>
+{% endblock %}

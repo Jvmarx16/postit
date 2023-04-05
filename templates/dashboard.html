@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <a class="btn-create" href="/add_message">Escrever +</a>
+    <h1 class="title-page">Painel de Mensagens</h1>
+    <p class="user-msg">Bem vindo(a), {{session.username}}</p>
+    <p class="user-msg">Membro desde {{session.register_date}}</p>.
+    <div class="container-pai">
+        {% for message in messages %}
+            <div class="container-filho">
+                <h1><a id="message-titledash" href="messages/{{message.id}}">{{message.title}}</a></h1>
+                <small>ID: {{message.id}}</small>
+                <small>Autor: {{message.author}}</small>
+                <small>Data: {{message.create_date}}</small> 
+                {% if session.username == message.author %}
+                    <div class="dash-btns">
+                        <a href="edit_message/{{message.id}}" class="btn-edit">Editar</a>
+                        <a href="delete_message/{{message.id}}" class="btn-delete">Apagar</a>
+                    </div>
+                {% endif %}
+            </div>
+            <br>             
+        {% endfor %}
+    </div>   
+{% endblock %}
